@@ -30,7 +30,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, foreign_key: false|
+|name|string|null: false|
 
 ### Association
 - has_many :massages

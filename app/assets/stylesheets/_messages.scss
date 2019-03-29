@@ -6,6 +6,7 @@
   width: 100vw;
   background-color: #38AEF0;
 }
+
 .wrapper{
   display: flex;
   .chat-side {
@@ -25,7 +26,6 @@
         font-weight: bold;
       &__menu{
         display: flex;
-        // TODO link_toタグに置き換え
         .fa{
           margin-left: 0.3rem;
           color: white;
@@ -78,7 +78,6 @@
             }
           }
       }
-      // メモ editボタンのaタグ
       a{
         color: #38aef0;
         text-decoration: none;
@@ -140,7 +139,6 @@
             color: #434a54;
             border-style: none;
           }
-          // TODO link_toタグに置き換え
           &__image{
             font-size: 1.3rem;
             position: absolute;

@@ -1,47 +1,52 @@
-.chat {
+.chat-main {
   width: calc(100% - 300px);
+  float: right;
   .header {
     box-sizing: border-box;
     height: 100px;
     padding: 0 40px;
-    .left-header {
-      float: left;
-      &__title {
-        color: #333;
+    position: sticky;
+    display: flex;
+    top: 0;
+    background-color: #FFFFFF;
+    width: 100%;
+    z-index:1;
+
+      &__current-group {
         font-size: 20px;
-        margin-top: 35px;
+        color: #333333;
+        margin-bottom: 10px;
       }
-      &__members {
-        @include flexbox;
-        color: $light_gray;
-        font-size: 12px;
-        margin-top: 15px;
-        .member {
-          display: inline-block;
-          padding-right: 5px;
+        &__group-box__member-list{
+          color: #999999;
+          font-size: 12px;
+          margin-top: 15px;
+            &__member{
+              margin-left: 0.3rem;
+              color: #999999;
+              font-size: 12px;
+            }
         }
-      }
-    }
-    .right-header {
-      border: 1px solid $light_blue;
-      color: $light_blue;
-      float: right;
+    &__edit-btn {
+      color: #38aef0;
       height: 40px;
       line-height: 40px;
-      margin-top: 28px;
+      justify-content: flex-end;
+      margin-top: 30px;
+      margin-bottom: 60px;
+      margin-left: 750px;
       padding: 0 20px;
-      &__button {
-        color: $light_blue;
-        text-decoration: none;
-      }
+      border: solid 1px #38aef0;
+      width: 40px;
+      float: right;
+
     }
   }
 
   .messages {
     background-color: #FAFAFA;
     box-sizing: border-box;
-    padding: 46px 40px 0;
-    height: calc(100% - 100px - 90px);
+    padding: 46px 40px 90px;
     .message {
       .upper-message {
         display: flex;
@@ -72,6 +77,10 @@
     box-sizing: border-box;
     height: 90px;
     padding: 20px 50px 20px 40px;
+    position: fixed;
+    bottom: 0;
+    overflow-y: auto;
+    width:calc(100% - 300px);
     &__message {
       border: none;
       float: left;

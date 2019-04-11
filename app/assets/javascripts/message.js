@@ -10,14 +10,12 @@ $(function(){
                       <div class="upper-message__date">
                         ${message.created_at}
                       </div>
-                      <p>
-                      <div class="lower-message__content">
-                        ${message.content}
-                      </div>
-                      </p>
-                      <div class="lower-meesage">
-                        <img src = "${message_image}" class = 'lower-message__image'>
-                      </div>
+                    </div>
+                    <div class="lower-meesage">
+                      ${message.content}
+                    </div>
+                    <div class="lower-message__content">
+                      <img src = "${message_image}" class = 'lower-message__image'>
                     </div>
                 </div>`
     return html;
@@ -37,9 +35,13 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.messages').append(html)
-      $('.form__message').val('')
-      $('.form__submit').prop('disabled', false);
+      $('.messages').append(html);
+      $('form')[0].reset();
+      $('input').prop('disabled', false);
     })
+    .fail(function() {
+        alert('Something wrong occurred.');
+      });
+    e.preventDefault();
   });
 });

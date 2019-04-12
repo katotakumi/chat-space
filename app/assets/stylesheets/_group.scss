@@ -82,6 +82,8 @@
     line-height: 50px;
     font-size: 14px;
     border-bottom: 1px solid #ddd;
+    max-width: 600px;
+    margin-left: auto;
     &:after {
       content: "";
       clear: both;

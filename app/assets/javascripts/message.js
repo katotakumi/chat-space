@@ -22,7 +22,6 @@ $(function(){
   $('#new_message').on('submit', function(e){
     var formData = new FormData(this);
     e.preventDefault();
-    var formData = new FormData(this);
     var url = $(this).attr('action')
     $.ajax({
       url: url,
@@ -39,8 +38,7 @@ $(function(){
       $('input').prop('disabled', false);
     })
     .fail(function() {
-        alert('Something wrong occurred.');
-      });
-    e.preventDefault();
+      alert('Something wrong occurred.');
+    });
   });
 });

@@ -20,27 +20,25 @@ $(function(){
     return html;
   }
 
-  $('#new_message').on('submit', function(e){
-    var formData = new FormData(this);
-    e.preventDefault();
-    var url = $(this).attr('action')
+  var reloadMessages = function() {
+    last_message_id = $('.message:last').data('message-id');
     $.ajax({
-      url: url,
-      type: "POST",
-      data: formData,
+      url: location.href,
+      type: 'GET',
       dataType: 'json',
-      processData: false,
-      contentType: false
+      data: {id: last_message_id}
     })
-    .done(function(data){
-      var html = buildHTML(data);
-      $('.messages').append(html);
-      $('form')[0].reset();
-      $('input').prop('disabled', false);
-      $('.messages').animate({scrollTop: $('.messages').get(0).scrollHeight}, 'fast');
+    .done(function(messages) {
+      messages.forEach(function(message){
+        var html = buildHTML(message);
+        $(".messages").append(html);
+        $('.messages').animate({scrollTop: $('.messages').get(0).scrollHeight}, 'fast');
+        $('.messages').animate({scrollTop :topHeight}, 'fast');
+      });
     })
     .fail(function() {
-      alert('Something wrong occurred.');
+      alart('error');
     });
-  });
+  };
+    setInterval(reloadMessages, 5000);
 });

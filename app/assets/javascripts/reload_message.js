@@ -40,5 +40,5 @@ $(function(){
       alart('error');
     });
   };
-    setInterval(reloadMessages, 5000);
+    setInterval(reloadMessages, 1000);
 });

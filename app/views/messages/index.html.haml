@@ -12,7 +12,9 @@
             .header__group-box__member-list__member
               - @group.users.each do |user|
                 = user.name
-      .header__edit-btn Edit
+      .header__edit-btn
+        = link_to edit_group_path(@group),class: "header__edit-btn__text" do
+          Edit
     .messages
       = render @messages
     .form

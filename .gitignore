@@ -19,3 +19,5 @@
 public/uploads/*
 
 app/views/api/index.json.jbuilder
+
+config/secrets.yml

@@ -73,4 +73,5 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'bootstrap-sass'
+gem 'fog-aws'
 

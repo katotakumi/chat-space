@@ -33,11 +33,15 @@ $(function(){
       contentType: false
     })
     .done(function(data){
+      if(data == 0){
+        alert("メッセージを入力してください");
+      }else{
       var html = buildHTML(data);
       $('.messages').append(html);
       $('form')[0].reset();
       $('input').prop('disabled', false);
       $('.messages').animate({scrollTop: $('.messages').get(0).scrollHeight}, 'fast');
+      }
     })
     .fail(function() {
       alert('Something wrong occurred.');
